@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "spec-hub-notion"
+version = "0.1.0"
+description = "Engineering Spec Management System powered by Notion MCP — track specs, change requests, decisions, and bugs in Notion with full traceability."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Sissi Feng", email = "isissifeng@gmail.com" }]
+keywords = ["mcp", "notion", "spec-management", "engineering", "traceability"]
+
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio", "ruff"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/spec_hub_notion"]
